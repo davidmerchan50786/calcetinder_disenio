@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calcetinder</string>
+    <string name="calcetinder">Calcetinder</string>
+    <string name="email">Email</string>
+    <string name="contrasena">ContraseÃ±a</string>
+    <string name="login">Login</string>
+    <string name="registro">Registrarse</string>
+    <string name="nombre">Nombre</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="crear_calcet">Crear Calcetin</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="like">Me gusta</string>
+    <string name="dislike">No me gusta</string>
+</resources>
