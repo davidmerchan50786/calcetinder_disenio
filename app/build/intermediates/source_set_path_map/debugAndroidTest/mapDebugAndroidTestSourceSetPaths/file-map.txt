@@ -1,0 +1,6 @@
+com.example.calcetinder.test.app-jetified-core-1.6.1-0 C:\Users\148fa05\.gradle\caches\8.9\transforms\7342685ae64ed25e17065b69f375586e\transformed\jetified-core-1.6.1\res
+com.example.calcetinder.test.app-jetified-tracing-1.2.0-1 C:\Users\148fa05\.gradle\caches\8.9\transforms\aefe5d29eccc9da1798f26cc72b270bf\transformed\jetified-tracing-1.2.0\res
+com.example.calcetinder.test.app-androidTest-2 C:\Users\148fa05\Downloads\Calcetinder_disenio_interfaces\app\build\generated\res\resValues\androidTest\debug
+com.example.calcetinder.test.app-mergeDebugAndroidTestResources-3 C:\Users\148fa05\Downloads\Calcetinder_disenio_interfaces\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.calcetinder.test.app-mergeDebugAndroidTestResources-4 C:\Users\148fa05\Downloads\Calcetinder_disenio_interfaces\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.calcetinder.test.app-debugAndroidTest-5 C:\Users\148fa05\Downloads\Calcetinder_disenio_interfaces\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
