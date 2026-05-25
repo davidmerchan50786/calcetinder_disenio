@@ -3365,6 +3365,7 @@ int id et_color 0x7f0800cc
 int id et_contrasena 0x7f0800cd
 int id et_descripcion 0x7f0800ce
 int id et_email 0x7f0800cf
+int id et_material 0x7f080227
 int id et_nombre 0x7f0800d0
 int id exitUntilCollapsed 0x7f0800d1
 int id expand_activities_button 0x7f0800d2
@@ -3416,6 +3417,8 @@ int id invisible 0x7f0800ff
 int id inward 0x7f080100
 int id italic 0x7f080101
 int id item_touch_helper_previous_elevation 0x7f080102
+int id iv_calcetin 0x7f080228
+int id iv_calcetin_swipe 0x7f080229
 int id jumpToEnd 0x7f080103
 int id jumpToStart 0x7f080104
 int id labeled 0x7f080105
@@ -3566,6 +3569,7 @@ int id rounded 0x7f080195
 int id row_index_key 0x7f080196
 int id rtl 0x7f080197
 int id rv_calcetines 0x7f080198
+int id rv_matches 0x7f08022a
 int id save_non_transition_alpha 0x7f080199
 int id save_overlay_view 0x7f08019a
 int id sawtooth 0x7f08019b
@@ -3684,6 +3688,7 @@ int id tv_color 0x7f08020b
 int id tv_descripcion 0x7f08020c
 int id tv_material 0x7f08020d
 int id tv_nombre 0x7f08020e
+int id tv_titulo_dialogo 0x7f08022b
 int id unchecked 0x7f08020f
 int id uniform 0x7f080210
 int id unlabeled 0x7f080211
@@ -3840,8 +3845,10 @@ int layout design_navigation_menu 0x7f0b0029
 int layout design_navigation_menu_item 0x7f0b002a
 int layout design_text_input_end_icon 0x7f0b002b
 int layout design_text_input_start_icon 0x7f0b002c
+int layout dialog_calcetin 0x7f0b0072
 int layout dialog_crear_calcetin 0x7f0b002d
 int layout fragment_login 0x7f0b002e
+int layout fragment_matches 0x7f0b0073
 int layout fragment_miscalcetines 0x7f0b002f
 int layout fragment_registro 0x7f0b0030
 int layout fragment_swipe 0x7f0b0031
@@ -3959,15 +3966,20 @@ int string call_notification_hang_up_action 0x7f110028
 int string call_notification_incoming_text 0x7f110029
 int string call_notification_ongoing_text 0x7f11002a
 int string call_notification_screening_text 0x7f11002b
+int string cancelar 0x7f1100b5
 int string character_counter_content_description 0x7f11002c
 int string character_counter_overflowed_content_description 0x7f11002d
 int string character_counter_pattern 0x7f11002e
 int string ciudad 0x7f11002f
 int string clear_text_end_icon_content_description 0x7f110030
+int string color 0x7f1100b6
 int string contrasena 0x7f110031
 int string crear_calcet 0x7f110032
+int string descripcion 0x7f1100b7
 int string dest_title 0x7f110033
 int string dislike 0x7f110034
+int string editar 0x7f1100b8
+int string editar_calcetin 0x7f1100b9
 int string eliminar 0x7f110035
 int string email 0x7f110036
 int string error_a11y_label 0x7f110037
@@ -3975,11 +3987,13 @@ int string error_icon_content_description 0x7f110038
 int string exposed_dropdown_menu_content_description 0x7f110039
 int string fab_transformation_scrim_behavior 0x7f11003a
 int string fab_transformation_sheet_behavior 0x7f11003b
+int string guardar 0x7f1100ba
 int string hide_bottom_view_on_scroll_behavior 0x7f11003c
 int string icon_content_description 0x7f11003d
 int string item_view_role_description 0x7f11003e
 int string like 0x7f11003f
 int string login 0x7f110040
+int string logout 0x7f1100bb
 int string m3_exceed_max_badge_text_suffix 0x7f110041
 int string m3_ref_typeface_brand_medium 0x7f110042
 int string m3_ref_typeface_brand_regular 0x7f110043
@@ -3996,6 +4010,7 @@ int string m3_sys_motion_easing_linear 0x7f11004d
 int string m3_sys_motion_easing_standard 0x7f11004e
 int string m3_sys_motion_easing_standard_accelerate 0x7f11004f
 int string m3_sys_motion_easing_standard_decelerate 0x7f110050
+int string material 0x7f1100bc
 int string material_clock_display_divider 0x7f110051
 int string material_clock_toggle_content_description 0x7f110052
 int string material_hour_24h_suffix 0x7f110053
@@ -4083,6 +4098,7 @@ int string mtrl_timepicker_confirm 0x7f1100a4
 int string nav_app_bar_navigate_up_description 0x7f1100a5
 int string nav_app_bar_open_drawer_description 0x7f1100a6
 int string nombre 0x7f1100a7
+int string nuevo_calcetin 0x7f1100bd
 int string password_toggle_content_description 0x7f1100a8
 int string path_password_eye 0x7f1100a9
 int string path_password_eye_mask_strike_through 0x7f1100aa

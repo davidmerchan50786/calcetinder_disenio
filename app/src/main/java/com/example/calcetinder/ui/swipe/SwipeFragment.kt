@@ -2,13 +2,11 @@ package com.example.calcetinder.ui.swipe
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -18,73 +16,54 @@ import com.example.calcetinder.datos.Repositorio
 import com.example.calcetinder.databinding.FragmentSwipeBinding
 import kotlinx.coroutines.launch
 
-class SwipeFragment : Fragment() {
-    private var _binding: FragmentSwipeBinding? = null
-    private val binding get() = _binding!!
+class SwipeFragment : Fragment(R.layout.fragment_swipe) {
     private lateinit var viewModel: SwipeViewModel
-    private var usuarioId: Int = 0
+    private var uid = 0
 
-    override fun onCreateView(i: LayoutInflater, c: ViewGroup?, s: Bundle?): View {
-        _binding = FragmentSwipeBinding.inflate(i, c, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, s: Bundle?) {
-        super.onViewCreated(view, s)
-        val prefs = requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE)
-        usuarioId = prefs.getInt("usuarioId", 0)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val b = FragmentSwipeBinding.bind(view)
+        uid = requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE).getInt("usuarioId", 0)
+        
         val db = CalcetinderDB.obtenerDB(requireContext())
         val repo = Repositorio(db.usuarioDAO(), db.calcetinDAO(), db.matchDAO())
         viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
-            override fun <T : androidx.lifecycle.ViewModel> create(mc: Class<T>): T = SwipeViewModel(repo) as T
-        }).get(SwipeViewModel::class.java)
-        setHasOptionsMenu(true)
+            override fun <T : androidx.lifecycle.ViewModel> create(m: Class<T>) = SwipeViewModel(repo) as T
+        })[SwipeViewModel::class.java]
+
+        configurarMenu()
         viewModel.cargarCalcetines()
-        binding.btnLike.setOnClickListener { viewModel.like(usuarioId); actualizarUI() }
-        binding.btnDislike.setOnClickListener { viewModel.dislike(); actualizarUI() }
-        lifecycleScope.launch { viewModel.calcetines.collect { actualizarUI() } }
-        lifecycleScope.launch { viewModel.indiceActual.collect { actualizarUI() } }
-    }
 
-    private fun actualizarUI() {
-        val idx = viewModel.indiceActual.value
-        val lista = viewModel.calcetines.value
-        if (lista.isNotEmpty() && idx < lista.size) {
-            val c = lista[idx]
-            binding.tvNombre.text = c.nombre
-            binding.tvDescripcion.text = c.descripcion
-            binding.tvColor.text = "Color: " + c.color
-            binding.tvMaterial.text = "Material: " + c.material
-        } else {
-            binding.tvNombre.text = "Sin mas calcetines"
-            binding.tvDescripcion.text = ""
-            binding.tvColor.text = ""
-            binding.tvMaterial.text = ""
-            binding.btnLike.isEnabled = false
-            binding.btnDislike.isEnabled = false
+        b.btnLike.setOnClickListener { viewModel.like(uid) }
+        b.btnDislike.setOnClickListener { viewModel.dislike() }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.calcetines.collect { lista ->
+                val idx = viewModel.indiceActual.value
+                if (lista.isNotEmpty() && idx < lista.size) {
+                    val c = lista[idx]
+                    b.tvNombre.text = c.nombre
+                    b.tvDescripcion.text = c.descripcion
+                    b.tvColor.text = "Color: ${c.color}"
+                    b.tvMaterial.text = "Material: ${c.material}"
+                } else b.tvNombre.text = "No hay más calcetines"
+            }
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inf: MenuInflater) {
-        inf.inflate(R.menu.menu_swipe, menu)
-        super.onCreateOptionsMenu(menu, inf)
+    private fun configurarMenu() {
+        (requireActivity() as MenuHost).addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) = menuInflater.inflate(R.menu.menu_swipe, menu)
+            override fun onMenuItemSelected(item: MenuItem): Boolean {
+                when (item.itemId) {
+                    R.id.action_mis_calcetines -> findNavController().navigate(R.id.action_swipeFragment_to_miscalcetinesFragment)
+                    R.id.action_matches -> findNavController().navigate(R.id.action_swipeFragment_to_matchesFragment)
+                    R.id.action_logout -> {
+                        requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE).edit().clear().apply()
+                        findNavController().navigate(R.id.loginFragment)
+                    }
+                }
+                return true
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
-
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_mis_calcetines -> {
-            findNavController().navigate(R.id.action_swipeFragment_to_miscalcetinesFragment); true
-        }
-        R.id.action_matches -> {
-            findNavController().navigate(R.id.action_swipeFragment_to_matchesFragment); true
-        }
-        R.id.action_logout -> {
-            requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE)
-                .edit().clear().apply()
-            findNavController().navigate(R.id.action_swipeFragment_to_loginFragment)
-            true
-        }
-        else -> super.onOptionsItemSelected(item)
-    }
-
-    override fun onDestroyView() { super.onDestroyView(); _binding = null }
 }

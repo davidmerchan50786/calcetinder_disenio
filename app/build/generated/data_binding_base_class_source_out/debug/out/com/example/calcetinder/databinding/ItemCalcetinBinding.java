@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,6 +28,9 @@ public final class ItemCalcetinBinding implements ViewBinding {
   public final Button btnEliminar;
 
   @NonNull
+  public final ImageView ivCalcetin;
+
+  @NonNull
   public final TextView tvColor;
 
   @NonNull
@@ -39,11 +43,12 @@ public final class ItemCalcetinBinding implements ViewBinding {
   public final TextView tvNombre;
 
   private ItemCalcetinBinding(@NonNull LinearLayout rootView, @NonNull Button btnEditar,
-      @NonNull Button btnEliminar, @NonNull TextView tvColor, @NonNull TextView tvDescripcion,
-      @NonNull TextView tvMaterial, @NonNull TextView tvNombre) {
+      @NonNull Button btnEliminar, @NonNull ImageView ivCalcetin, @NonNull TextView tvColor,
+      @NonNull TextView tvDescripcion, @NonNull TextView tvMaterial, @NonNull TextView tvNombre) {
     this.rootView = rootView;
     this.btnEditar = btnEditar;
     this.btnEliminar = btnEliminar;
+    this.ivCalcetin = ivCalcetin;
     this.tvColor = tvColor;
     this.tvDescripcion = tvDescripcion;
     this.tvMaterial = tvMaterial;
@@ -89,6 +94,12 @@ public final class ItemCalcetinBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.iv_calcetin;
+      ImageView ivCalcetin = ViewBindings.findChildViewById(rootView, id);
+      if (ivCalcetin == null) {
+        break missingId;
+      }
+
       id = R.id.tv_color;
       TextView tvColor = ViewBindings.findChildViewById(rootView, id);
       if (tvColor == null) {
@@ -113,8 +124,8 @@ public final class ItemCalcetinBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemCalcetinBinding((LinearLayout) rootView, btnEditar, btnEliminar, tvColor,
-          tvDescripcion, tvMaterial, tvNombre);
+      return new ItemCalcetinBinding((LinearLayout) rootView, btnEditar, btnEliminar, ivCalcetin,
+          tvColor, tvDescripcion, tvMaterial, tvNombre);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

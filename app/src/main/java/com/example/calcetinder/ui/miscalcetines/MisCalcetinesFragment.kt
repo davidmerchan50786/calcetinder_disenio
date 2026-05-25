@@ -2,48 +2,67 @@ package com.example.calcetinder.ui.miscalcetines
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.calcetinder.R
 import com.example.calcetinder.datos.CalcetinderDB
 import com.example.calcetinder.datos.Repositorio
+import com.example.calcetinder.databinding.DialogCalcetinBinding
 import com.example.calcetinder.databinding.FragmentMiscalcetinesBinding
+import com.example.calcetinder.modelo.Calcetin
 import kotlinx.coroutines.launch
 
-// TODO falta el dialogo de crear/editar y el menu
-class MisCalcetinesFragment : Fragment() {
-    private var _binding: FragmentMiscalcetinesBinding? = null
-    private val binding get() = _binding!!
+class MisCalcetinesFragment : Fragment(R.layout.fragment_miscalcetines) {
     private lateinit var viewModel: MisCalcetinesViewModel
-    private lateinit var adapter: CalcetinAdapter
-    private var usuarioId: Int = 0
+    private var uid = 0
 
-    override fun onCreateView(i: LayoutInflater, c: ViewGroup?, s: Bundle?): View {
-        _binding = FragmentMiscalcetinesBinding.inflate(i, c, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, s: Bundle?) {
-        super.onViewCreated(view, s)
-        val prefs = requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE)
-        usuarioId = prefs.getInt("usuarioId", 0)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val b = FragmentMiscalcetinesBinding.bind(view)
+        uid = requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE).getInt("usuarioId", 0)
+        
         val db = CalcetinderDB.obtenerDB(requireContext())
         val repo = Repositorio(db.usuarioDAO(), db.calcetinDAO(), db.matchDAO())
         viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
-            override fun <T : androidx.lifecycle.ViewModel> create(mc: Class<T>): T =
-                MisCalcetinesViewModel(repo) as T
-        }).get(MisCalcetinesViewModel::class.java)
-        adapter = CalcetinAdapter(emptyList(), {}, {})
-        binding.rvCalcetines.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = this@MisCalcetinesFragment.adapter
+            override fun <T : androidx.lifecycle.ViewModel> create(m: Class<T>) = MisCalcetinesViewModel(repo) as T
+        })[MisCalcetinesViewModel::class.java]
+
+        val adapter = CalcetinAdapter(esGestion = true, 
+            onEdit = { mostrarDialogo(it) }, 
+            onDelete = { viewModel.eliminarCalcetin(it) })
+        
+        b.rvCalcetines.layoutManager = LinearLayoutManager(context)
+        b.rvCalcetines.adapter = adapter
+        b.btnCrearCalcetin.setOnClickListener { mostrarDialogo() }
+
+        viewModel.cargarCalcetinesPorUsuario(uid)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.misCalcetines.collect { adapter.actualizar(it) }
         }
-        viewModel.cargarCalcetinesPorUsuario(usuarioId)
-        lifecycleScope.launch { viewModel.misCalcetines.collect { adapter.actualizarLista(it) } }
     }
-    override fun onDestroyView() { super.onDestroyView(); _binding = null }
+
+    private fun mostrarDialogo(c: Calcetin? = null) {
+        val db = DialogCalcetinBinding.inflate(layoutInflater)
+        c?.let {
+            db.etNombre.setText(it.nombre)
+            db.etDescripcion.setText(it.descripcion)
+            db.etColor.setText(it.color)
+            db.etMaterial.setText(it.material)
+        }
+        AlertDialog.Builder(requireContext())
+            .setTitle(if (c == null) "Nuevo" else "Editar")
+            .setView(db.root)
+            .setPositiveButton("Guardar") { _, _ ->
+                val n = db.etNombre.text.toString()
+                if (n.isNotBlank()) {
+                    if (c == null) viewModel.crearCalcetin(uid, n, db.etDescripcion.text.toString(), db.etColor.text.toString())
+                    else viewModel.actualizarCalcetin(c.copy(nombre = n, descripcion = db.etDescripcion.text.toString(), color = db.etColor.text.toString(), material = db.etMaterial.text.toString()))
+                } else Toast.makeText(context, "Nombre vacío", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Cancelar", null).show()
+    }
 }

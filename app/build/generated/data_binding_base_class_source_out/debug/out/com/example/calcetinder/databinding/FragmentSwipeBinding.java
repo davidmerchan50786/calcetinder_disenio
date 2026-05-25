@@ -4,7 +4,7 @@ package com.example.calcetinder.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.calcetinder.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,10 +22,13 @@ public final class FragmentSwipeBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button btnDislike;
+  public final FloatingActionButton btnDislike;
 
   @NonNull
-  public final Button btnLike;
+  public final FloatingActionButton btnLike;
+
+  @NonNull
+  public final ImageView ivCalcetinSwipe;
 
   @NonNull
   public final TextView tvColor;
@@ -38,12 +42,14 @@ public final class FragmentSwipeBinding implements ViewBinding {
   @NonNull
   public final TextView tvNombre;
 
-  private FragmentSwipeBinding(@NonNull LinearLayout rootView, @NonNull Button btnDislike,
-      @NonNull Button btnLike, @NonNull TextView tvColor, @NonNull TextView tvDescripcion,
-      @NonNull TextView tvMaterial, @NonNull TextView tvNombre) {
+  private FragmentSwipeBinding(@NonNull LinearLayout rootView,
+      @NonNull FloatingActionButton btnDislike, @NonNull FloatingActionButton btnLike,
+      @NonNull ImageView ivCalcetinSwipe, @NonNull TextView tvColor,
+      @NonNull TextView tvDescripcion, @NonNull TextView tvMaterial, @NonNull TextView tvNombre) {
     this.rootView = rootView;
     this.btnDislike = btnDislike;
     this.btnLike = btnLike;
+    this.ivCalcetinSwipe = ivCalcetinSwipe;
     this.tvColor = tvColor;
     this.tvDescripcion = tvDescripcion;
     this.tvMaterial = tvMaterial;
@@ -78,14 +84,20 @@ public final class FragmentSwipeBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btn_dislike;
-      Button btnDislike = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton btnDislike = ViewBindings.findChildViewById(rootView, id);
       if (btnDislike == null) {
         break missingId;
       }
 
       id = R.id.btn_like;
-      Button btnLike = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton btnLike = ViewBindings.findChildViewById(rootView, id);
       if (btnLike == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_calcetin_swipe;
+      ImageView ivCalcetinSwipe = ViewBindings.findChildViewById(rootView, id);
+      if (ivCalcetinSwipe == null) {
         break missingId;
       }
 
@@ -113,8 +125,8 @@ public final class FragmentSwipeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSwipeBinding((LinearLayout) rootView, btnDislike, btnLike, tvColor,
-          tvDescripcion, tvMaterial, tvNombre);
+      return new FragmentSwipeBinding((LinearLayout) rootView, btnDislike, btnLike, ivCalcetinSwipe,
+          tvColor, tvDescripcion, tvMaterial, tvNombre);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
