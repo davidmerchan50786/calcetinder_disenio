@@ -2,8 +2,9 @@ package com.example.calcetinder.ui.login
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Patterns
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -15,45 +16,48 @@ import com.example.calcetinder.datos.Repositorio
 import com.example.calcetinder.databinding.FragmentRegistroBinding
 import kotlinx.coroutines.launch
 
-class RegistroFragment : Fragment(R.layout.fragment_registro) {
+class RegistroFragment : Fragment() {
+    private var _binding: FragmentRegistroBinding? = null
+    private val binding get() = _binding!!
     private lateinit var viewModel: LoginViewModel
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentRegistroBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val b = FragmentRegistroBinding.bind(view)
+        super.onViewCreated(view, savedInstanceState)
         val db = CalcetinderDB.obtenerDB(requireContext())
         val repo = Repositorio(db.usuarioDAO(), db.calcetinDAO(), db.matchDAO())
         viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
-            override fun <T : androidx.lifecycle.ViewModel> create(m: Class<T>) = LoginViewModel(repo) as T
-        })[LoginViewModel::class.java]
+            override fun <T : androidx.lifecycle.ViewModel> create(m: Class<T>): T = LoginViewModel(repo) as T
+        }).get(LoginViewModel::class.java)
 
-        b.btnRegistrar.setOnClickListener {
-            val n = b.etNombre.text.toString().trim()
-            val e = b.etEmail.text.toString().trim()
-            val p = b.etContrasena.text.toString().trim()
-            val c = b.etCiudad.text.toString().trim()
-            if (validar(b, n, e, p, c)) viewModel.registro(n, e, p, c)
+        binding.btnRegistrar.setOnClickListener {
+            val nombre = binding.etNombre.text.toString()
+            val email = binding.etEmail.text.toString()
+            val contrasena = binding.etContrasena.text.toString()
+            val ciudad = binding.etCiudad.text.toString()
+            if (nombre.isNotEmpty() && email.isNotEmpty() && contrasena.isNotEmpty() && ciudad.isNotEmpty())
+                viewModel.registro(nombre, email, contrasena, ciudad)
+            else Toast.makeText(context, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
         }
-
-        b.btnVolver.setOnClickListener { findNavController().navigateUp() }
+        binding.btnVolver.setOnClickListener { findNavController().navigateUp() }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.usuarioActual.collect { u ->
-                u?.let {
-                    requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE).edit().putInt("usuarioId", it.id).apply()
+                if (u != null) {
+                    requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE)
+                        .edit().putInt("usuarioId", u.id).apply()
                     findNavController().navigate(R.id.action_registroFragment_to_swipeFragment)
                 }
             }
         }
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.error.collect { if (it.isNotEmpty()) Toast.makeText(context, it, Toast.LENGTH_SHORT).show() }
+            viewModel.mensajeError.collect { if (it.isNotEmpty()) Toast.makeText(context, it, Toast.LENGTH_SHORT).show() }
         }
     }
 
-    private fun validar(b: FragmentRegistroBinding, n: String, e: String, p: String, c: String): Boolean {
-        if (n.isEmpty()) b.etNombre.error = "Obligatorio"
-        if (!Patterns.EMAIL_ADDRESS.matcher(e).matches()) b.etEmail.error = "Email inválido"
-        if (p.length < 4) b.etContrasena.error = "Mínimo 4 caracteres"
-        if (c.isEmpty()) b.etCiudad.error = "Obligatorio"
-        return b.etNombre.error == null && b.etEmail.error == null && b.etContrasena.error == null && b.etCiudad.error == null
-    }
+    override fun onDestroyView() { super.onDestroyView(); _binding = null }
 }
