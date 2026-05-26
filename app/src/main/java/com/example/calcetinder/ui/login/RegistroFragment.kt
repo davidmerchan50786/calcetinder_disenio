@@ -35,13 +35,17 @@ class RegistroFragment : Fragment() {
         }).get(LoginViewModel::class.java)
 
         binding.btnRegistrar.setOnClickListener {
-            val nombre = binding.etNombre.text.toString()
-            val email = binding.etEmail.text.toString()
+            val nombre = binding.etNombre.text.toString().trim()
+            val email = binding.etEmail.text.toString().trim()
             val contrasena = binding.etContrasena.text.toString()
-            val ciudad = binding.etCiudad.text.toString()
-            if (nombre.isNotEmpty() && email.isNotEmpty() && contrasena.isNotEmpty() && ciudad.isNotEmpty())
-                viewModel.registro(nombre, email, contrasena, ciudad)
-            else Toast.makeText(context, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
+            val ciudad = binding.etCiudad.text.toString().trim()
+            when {
+                nombre.length < 2 -> Toast.makeText(context, "Nombre demasiado corto (mín. 2 caracteres)", Toast.LENGTH_SHORT).show()
+                !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> Toast.makeText(context, "Email no válido", Toast.LENGTH_SHORT).show()
+                contrasena.length < 6 -> Toast.makeText(context, "Contraseña muy corta (mín. 6 caracteres)", Toast.LENGTH_SHORT).show()
+                ciudad.isEmpty() -> Toast.makeText(context, "Introduce tu ciudad", Toast.LENGTH_SHORT).show()
+                else -> viewModel.registro(nombre, email, contrasena, ciudad)
+            }
         }
         binding.btnVolver.setOnClickListener { findNavController().navigateUp() }
 

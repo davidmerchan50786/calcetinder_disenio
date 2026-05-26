@@ -35,10 +35,13 @@ class LoginFragment : Fragment() {
         }).get(LoginViewModel::class.java)
 
         binding.btnLogin.setOnClickListener {
-            val identificador = binding.etEmail.text.toString()
+            val identificador = binding.etEmail.text.toString().trim()
             val contrasena = binding.etContrasena.text.toString()
-            if (identificador.isNotEmpty() && contrasena.isNotEmpty()) viewModel.login(identificador, contrasena)
-            else Toast.makeText(context, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
+            when {
+                identificador.isEmpty() -> Toast.makeText(context, "Introduce tu email o nombre", Toast.LENGTH_SHORT).show()
+                contrasena.length < 6   -> Toast.makeText(context, "La contraseña tiene mínimo 6 caracteres", Toast.LENGTH_SHORT).show()
+                else -> viewModel.login(identificador, contrasena)
+            }
         }
         binding.btnRegistro.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registroFragment)

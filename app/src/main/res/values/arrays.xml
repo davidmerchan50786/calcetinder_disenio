@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colores_calcetin">
+        <item>Rojo</item><item>Verde</item><item>Azul</item><item>Amarillo</item>
+        <item>Negro</item><item>Blanco</item><item>Gris</item><item>Rosa</item>
+        <item>Naranja</item><item>Morado</item><item>Marrón</item><item>Turquesa</item>
+    </string-array>
+    <string-array name="materiales_calcetin">
+        <item>Algodón</item><item>Lana</item><item>Nailon</item>
+        <item>Poliéster</item><item>Bambú</item><item>Seda</item>
+    </string-array>
+</resources>

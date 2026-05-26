@@ -15,9 +15,9 @@ class MisCalcetinesViewModel(private val repo: Repositorio) : ViewModel() {
     fun cargarCalcetinesPorUsuario(uid: Int) {
         viewModelScope.launch { repo.obtenerCalcetinesPorUsuario(uid).collect { _calcetines.value = it } }
     }
-    fun crearCalcetin(uid: Int, nombre: String, desc: String, color: String) {
+    fun crearCalcetin(uid: Int, nombre: String, desc: String, color: String, material: String) {
         viewModelScope.launch {
-            repo.insertarCalcetin(Calcetin(usuarioId = uid, nombre = nombre, descripcion = desc, color = color))
+            repo.insertarCalcetin(Calcetin(usuarioId = uid, nombre = nombre, descripcion = desc, color = color, material = material))
         }
     }
     fun eliminarCalcetin(c: Calcetin) { viewModelScope.launch { repo.eliminarCalcetin(c) } }
