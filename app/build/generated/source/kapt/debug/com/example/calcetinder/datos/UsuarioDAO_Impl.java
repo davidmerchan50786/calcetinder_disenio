@@ -14,6 +14,7 @@ import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.calcetinder.modelo.Usuario;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -123,16 +124,16 @@ public final class UsuarioDAO_Impl implements UsuarioDAO {
   }
 
   @Override
-  public Object insertar(final Usuario usuario, final Continuation<? super Unit> $completion) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+  public Object insertar(final Usuario usuario, final Continuation<? super Long> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
       @Override
       @NonNull
-      public Unit call() throws Exception {
+      public Long call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfUsuario.insert(usuario);
+          final Long _result = __insertionAdapterOfUsuario.insertAndReturnId(usuario);
           __db.setTransactionSuccessful();
-          return Unit.INSTANCE;
+          return _result;
         } finally {
           __db.endTransaction();
         }
@@ -239,16 +240,22 @@ public final class UsuarioDAO_Impl implements UsuarioDAO {
   }
 
   @Override
-  public Flow<Usuario> login(final String email, final String contrasena) {
-    final String _sql = "SELECT * FROM usuarios WHERE email = ? AND contrasena = ?";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
+  public Flow<Usuario> login(final String identificador, final String contrasena) {
+    final String _sql = "SELECT * FROM usuarios WHERE (email = ? OR nombre = ?) AND contrasena = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 3);
     int _argIndex = 1;
-    if (email == null) {
+    if (identificador == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, email);
+      _statement.bindString(_argIndex, identificador);
     }
     _argIndex = 2;
+    if (identificador == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, identificador);
+    }
+    _argIndex = 3;
     if (contrasena == null) {
       _statement.bindNull(_argIndex);
     } else {

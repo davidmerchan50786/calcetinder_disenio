@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-23:12
+ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:1-24:12
 MERGED from [androidx.databinding:viewbinding:8.7.3] C:\Users\coperenea\.gradle\caches\8.9\transforms\4cff7007aa36fab8a43b8c2213434f66\transformed\jetified-viewbinding-8.7.3\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.8.5] C:\Users\coperenea\.gradle\caches\8.9\transforms\ffb774445790ec0cffa83f4673d2d027\transformed\navigation-common-2.8.5\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] C:\Users\coperenea\.gradle\caches\8.9\transforms\538dea9cd22749ff26477419a9b65b26\transformed\navigation-common-ktx-2.8.5\AndroidManifest.xml:2:1-7:12
@@ -78,8 +78,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\coperen
 	xmlns:android
 		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:4:5-22:19
-INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:4:5-22:19
+ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:4:5-23:19
+INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:4:5-23:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\coperenea\.gradle\caches\8.9\transforms\c2cf879611f7da1de3c3e5d55213d5ac\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\coperenea\.gradle\caches\8.9\transforms\c2cf879611f7da1de3c3e5d55213d5ac\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\coperenea\.gradle\caches\8.9\transforms\23c2a5c2f06499f9fc437cd69201d205\transformed\constraintlayout-2.2.0\AndroidManifest.xml:7:5-20
@@ -113,31 +113,33 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\co
 	android:roundIcon
 		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:10:9-54
 	tools:targetApi
-		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:13:9-29
+		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:14:9-29
 	android:icon
 		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:8:9-43
 	android:allowBackup
 		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:5:9-35
 	android:theme
 		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:12:9-49
+	android:enableOnBackInvokedCallback
+		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:13:9-51
 	android:dataExtractionRules
 		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:6:9-65
 activity#com.example.calcetinder.MainActivity
-ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:14:9-21:20
+ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:15:9-22:20
 	android:exported
-		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:16:13-36
+		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:15:13-41
+		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:16:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:17:13-20:29
+ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:18:13-21:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml:20:27-74
 uses-sdk
 INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\coperenea\Desktop\DAM\calcetinder_disenio\app\src\main\AndroidManifest.xml

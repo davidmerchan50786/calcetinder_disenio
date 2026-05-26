@@ -371,6 +371,72 @@ public final class CalcetinDAO_Impl implements CalcetinDAO {
     });
   }
 
+  @Override
+  public Flow<List<Calcetin>> obtenerCalcetinesLikeados(final int usuarioId) {
+    final String _sql = "SELECT DISTINCT calcetines.* FROM calcetines INNER JOIN matches ON calcetines.id = matches.calcetinId WHERE matches.usuarioId = ? AND matches.tipoMatch = 'like'";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, usuarioId);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"calcetines",
+        "matches"}, new Callable<List<Calcetin>>() {
+      @Override
+      @NonNull
+      public List<Calcetin> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfUsuarioId = CursorUtil.getColumnIndexOrThrow(_cursor, "usuarioId");
+          final int _cursorIndexOfNombre = CursorUtil.getColumnIndexOrThrow(_cursor, "nombre");
+          final int _cursorIndexOfDescripcion = CursorUtil.getColumnIndexOrThrow(_cursor, "descripcion");
+          final int _cursorIndexOfColor = CursorUtil.getColumnIndexOrThrow(_cursor, "color");
+          final int _cursorIndexOfMaterial = CursorUtil.getColumnIndexOrThrow(_cursor, "material");
+          final List<Calcetin> _result = new ArrayList<Calcetin>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final Calcetin _item;
+            final int _tmpId;
+            _tmpId = _cursor.getInt(_cursorIndexOfId);
+            final int _tmpUsuarioId;
+            _tmpUsuarioId = _cursor.getInt(_cursorIndexOfUsuarioId);
+            final String _tmpNombre;
+            if (_cursor.isNull(_cursorIndexOfNombre)) {
+              _tmpNombre = null;
+            } else {
+              _tmpNombre = _cursor.getString(_cursorIndexOfNombre);
+            }
+            final String _tmpDescripcion;
+            if (_cursor.isNull(_cursorIndexOfDescripcion)) {
+              _tmpDescripcion = null;
+            } else {
+              _tmpDescripcion = _cursor.getString(_cursorIndexOfDescripcion);
+            }
+            final String _tmpColor;
+            if (_cursor.isNull(_cursorIndexOfColor)) {
+              _tmpColor = null;
+            } else {
+              _tmpColor = _cursor.getString(_cursorIndexOfColor);
+            }
+            final String _tmpMaterial;
+            if (_cursor.isNull(_cursorIndexOfMaterial)) {
+              _tmpMaterial = null;
+            } else {
+              _tmpMaterial = _cursor.getString(_cursorIndexOfMaterial);
+            }
+            _item = new Calcetin(_tmpId,_tmpUsuarioId,_tmpNombre,_tmpDescripcion,_tmpColor,_tmpMaterial);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();

@@ -25,7 +25,10 @@ class MatchesFragment : Fragment(R.layout.fragment_matches) {
         val db = CalcetinderDB.obtenerDB(requireContext())
         val repo = Repositorio(db.usuarioDAO(), db.calcetinDAO(), db.matchDAO())
         viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
-            override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>) = MatchesViewModel(repo) as T
+            override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T {
+                @Suppress("UNCHECKED_CAST")
+                return MatchesViewModel(repo) as T
+            }
         })[MatchesViewModel::class.java]
 
         val adapter = CalcetinAdapter(esGestion = false)

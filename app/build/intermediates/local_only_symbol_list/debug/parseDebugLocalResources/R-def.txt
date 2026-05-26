@@ -2,9 +2,9 @@ R_DEF: Internal format may change without notice
 local
 color black
 color purple_500
-color purple_700
-color red_500
-color teal_200
+color rojo
+color verde_oscuro
+color verde_primario
 color white
 drawable ic_launcher_foreground
 id action_loginFragment_to_registroFragment
@@ -77,14 +77,15 @@ string editar
 string editar_calcetin
 string eliminar
 string email
+string email_o_nombre
 string guardar
 string like
 string login
-string logout
 string material
 string nombre
 string nuevo_calcetin
 string registro
+string sin_matches
 style Theme.Calcetinder
 xml backup_rules
 xml data_extraction_rules

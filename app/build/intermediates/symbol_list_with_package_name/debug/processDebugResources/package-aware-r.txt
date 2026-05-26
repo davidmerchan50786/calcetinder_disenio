@@ -2147,10 +2147,9 @@ color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color purple_500
-color purple_700
-color red_500
 color ripple_material_dark
 color ripple_material_light
+color rojo
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -2161,9 +2160,10 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
-color teal_200
 color tooltip_background_dark
 color tooltip_background_light
+color verde_oscuro
+color verde_primario
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -3983,6 +3983,7 @@ string editar
 string editar_calcetin
 string eliminar
 string email
+string email_o_nombre
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -3994,7 +3995,6 @@ string icon_content_description
 string item_view_role_description
 string like
 string login
-string logout
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -4112,6 +4112,7 @@ string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string sin_matches
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
