@@ -1,17 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Calcetinder</string>
     <string name="calcetinder">Calcetinder</string>
     <string name="email">Email</string>
     <string name="email_o_nombre">Email o nombre de usuario</string>
-    <string name="contrasena">Contraseña</string>
+    <string name="contrasena">Contrasena</string>
     <string name="login">Login</string>
     <string name="registro">Registrarse</string>
     <string name="nombre">Nombre</string>
     <string name="ciudad">Ciudad</string>
-    <string name="crear_calcet">Crear Calcetín</string>
+    <string name="crear_calcet">Crear Calcetin</string>
     <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="color">Color</string>
+    <string name="material">Material</string>
+    <string name="nuevo_calcetin">Nuevo Calcetin</string>
+    <string name="editar_calcetin">Editar Calcetin</string>
     <string name="like">Me gusta</string>
     <string name="dislike">No me gusta</string>
-    <string name="sin_matches">Aún no tienes ningún match</string>
+    <string name="sin_matches">Sin matches aun</string>
 </resources>
