@@ -1,4 +1,4 @@
-package com.example.calcetinder.ui.swipe
+﻿package com.example.calcetinder.ui.swipe
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,25 +9,24 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class SwipeViewModel(private val repo: Repositorio) : ViewModel() {
+class SwipeViewModel(private val repositorio: Repositorio) : ViewModel() {
     private val _calcetines = MutableStateFlow<List<Calcetin>>(emptyList())
     val calcetines: StateFlow<List<Calcetin>> = _calcetines
-    private val _indice = MutableStateFlow(0)
-    val indiceActual: StateFlow<Int> = _indice
+    private val _indiceActual = MutableStateFlow(0)
+    val indiceActual: StateFlow<Int> = _indiceActual
 
     fun cargarCalcetines() {
-        viewModelScope.launch { repo.obtenerTodosCalcetines().collect { _calcetines.value = it } }
-    }
-    fun like(usuarioId: Int) {
-        val c = _calcetines.value.getOrNull(_indice.value) ?: return
         viewModelScope.launch {
-            repo.insertarMatch(Match(usuarioId = usuarioId, calcetinId = c.id, tipoMatch = "like"))
-            siguiente()
+            repositorio.obtenerTodosCalcetines().collect { lista -> _calcetines.value = lista }
         }
     }
-    fun dislike() { viewModelScope.launch { siguiente() } }
-    private suspend fun siguiente() {
-        val n = _indice.value + 1
-        _indice.value = if (n < _calcetines.value.size) n else 0
+    fun like(usuarioId: Int) {
+        val calcetin = _calcetines.value.getOrNull(_indiceActual.value) ?: return
+        viewModelScope.launch {
+            repositorio.insertarMatch(Match(usuarioId = usuarioId, calcetinId = calcetin.id, tipoMatch = "like"))
+            avanzarSiguiente()
+        }
     }
+    fun dislike() { viewModelScope.launch { avanzarSiguiente() } }
+    private fun avanzarSiguiente() { _indiceActual.value = _indiceActual.value + 1 }
 }
