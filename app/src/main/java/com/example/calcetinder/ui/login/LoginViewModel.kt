@@ -1,4 +1,4 @@
-package com.example.calcetinder.ui.login
+﻿package com.example.calcetinder.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,31 +9,32 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val repo: Repositorio) : ViewModel() {
-    private val _usuario = MutableStateFlow<Usuario?>(null)
-    val usuarioActual: StateFlow<Usuario?> = _usuario
-    private val _error = MutableStateFlow("")
-    val error: StateFlow<String> = _error
+class LoginViewModel(private val repositorio: Repositorio) : ViewModel() {
+    private val _usuarioActual = MutableStateFlow<Usuario?>(null)
+    val usuarioActual: StateFlow<Usuario?> = _usuarioActual
+    private val _mensajeError = MutableStateFlow("")
+    val mensajeError: StateFlow<String> = _mensajeError
 
-    fun login(email: String, pass: String) {
+    fun login(identificador: String, contrasena: String) {
         viewModelScope.launch {
             try {
-                val u = repo.loginUsuario(email, pass).first()
-                if (u != null) { _usuario.value = u; _error.value = "" }
-                else _error.value = "Email o contraseÃ±a incorrectos"
-            } catch (e: Exception) { _error.value = "Error: " + e.message }
+                val usuario = repositorio.loginUsuario(identificador, contrasena).first()
+                if (usuario != null) { _usuarioActual.value = usuario; _mensajeError.value = "" }
+                else { _mensajeError.value = "Usuario o contrasena incorrectos" }
+            } catch (e: Exception) { _mensajeError.value = "Error: ${e.message}" }
         }
     }
 
-    fun registro(nombre: String, email: String, pass: String, ciudad: String) {
+    fun registro(nombre: String, email: String, contrasena: String, ciudad: String) {
         viewModelScope.launch {
             try {
-                val u = Usuario(nombre = nombre, email = email, contrasena = pass, ciudad = ciudad)
-                repo.insertarUsuario(u)
-                _usuario.value = u
-            } catch (e: Exception) { _error.value = "Error: " + e.message }
+                val u = Usuario(nombre = nombre, email = email, contrasena = contrasena, ciudad = ciudad)
+                val id = repositorio.insertarUsuario(u).toInt()
+                _usuarioActual.value = u.copy(id = id)
+                _mensajeError.value = ""
+            } catch (e: Exception) { _mensajeError.value = "Error: ${e.message}" }
         }
     }
 
-    fun logout() { _usuario.value = null }
+    fun logout() { _usuarioActual.value = null }
 }
