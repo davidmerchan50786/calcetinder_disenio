@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="red_500">#FFE53935</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="rojo">#FFFF5252</color>
+    <color name="verde_oscuro">#FF2E7D32</color>
+    <color name="verde_primario">#FF4CAF50</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Calcetinder</string>
     <string name="calcetinder">Calcetinder</string>
-    <string name="cancelar">Cancelar</string>
     <string name="ciudad">Ciudad</string>
-    <string name="color">Color</string>
     <string name="contrasena">Contraseña</string>
     <string name="crear_calcet">Crear Calcetín</string>
-    <string name="descripcion">Descripción</string>
     <string name="dislike">No me gusta</string>
-    <string name="editar">Editar</string>
-    <string name="editar_calcetin">Editar Calcetín</string>
     <string name="eliminar">Eliminar</string>
     <string name="email">Email</string>
-    <string name="guardar">Guardar</string>
+    <string name="email_o_nombre">Email o nombre de usuario</string>
     <string name="like">Me gusta</string>
     <string name="login">Login</string>
-    <string name="logout">Cerrar Sesión</string>
-    <string name="material">Material</string>
     <string name="nombre">Nombre</string>
-    <string name="nuevo_calcetin">Nuevo Calcetín</string>
     <string name="registro">Registrarse</string>
-    <style name="Theme.Calcetinder" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorSecondary">@color/teal_200</item>
+    <string name="sin_matches">Aún no tienes ningún match</string>
+    <style name="Theme.Calcetinder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/verde_primario</item>
+        <item name="colorPrimaryVariant">@color/verde_oscuro</item>
+        <item name="colorSecondary">@color/rojo</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
     </style>
 </resources>
