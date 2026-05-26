@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp">
+    <EditText android:id="@+id/et_nombre" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="Nombre del calcetin"
+        android:layout_marginBottom="12dp" />
+    <EditText android:id="@+id/et_descripcion" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="Descripcion"
+        android:layout_marginBottom="12dp" />
+    <EditText android:id="@+id/et_color" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="Color" />
+</LinearLayout>

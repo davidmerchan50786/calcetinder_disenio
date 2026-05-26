@@ -1,115 +1,107 @@
 [
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\layout_dialog_crear_calcetin.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\dialog_crear_calcetin.xml"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\layout_fragment_swipe.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_swipe.xml"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.example.calcetinder.app-debug-52:/layout_fragment_swipe.xml.flat",
         "source": "com.example.calcetinder.app-main-54:/layout/fragment_swipe.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\menu_menu_misc_calcetines.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\menu\\menu_misc_calcetines.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/menu_menu_misc_calcetines.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/menu/menu_misc_calcetines.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\menu_menu_swipe.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\menu\\menu_swipe.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/layout_fragment_miscalcetines.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/layout/fragment_miscalcetines.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\layout_item_calcetin.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\item_calcetin.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/layout_dialog_crear_calcetin.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/layout/dialog_crear_calcetin.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\navigation\\nav_graph.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "com.example.calcetinder.app-debug-52:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\layout_fragment_login.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_login.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.calcetinder.app-debug-52:/layout_fragment_login.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/layout/fragment_login.xml"
     },
     {
         "merged": "com.example.calcetinder.app-debug-52:/layout_item_calcetin.xml.flat",
         "source": "com.example.calcetinder.app-main-54:/layout/item_calcetin.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\xml\\data_extraction_rules.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\layout_fragment_miscalcetines.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_miscalcetines.xml"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-xhdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "com.example.calcetinder.app-debug-52:/navigation_nav_graph.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/navigation/nav_graph.xml"
     },
     {
         "merged": "com.example.calcetinder.app-debug-52:/layout_dialog_calcetin.xml.flat",
         "source": "com.example.calcetinder.app-main-54:/layout/dialog_calcetin.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\layout_fragment_registro.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_registro.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/layout_activity_main.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "com.example.calcetinder.app-debug-52:/xml_backup_rules.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-debug-52:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.example.calcetinder.app-debug-52:/layout_fragment_registro.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/layout/fragment_registro.xml"
+    },
+    {
+        "merged": "com.example.calcetinder.app-debug-52:/menu_menu_swipe.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/menu/menu_swipe.xml"
+    },
+    {
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.calcetinder.app-debug-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.calcetinder.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "com.example.calcetinder.app-debug-52:/layout_fragment_matches.xml.flat",

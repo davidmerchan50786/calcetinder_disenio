@@ -4,40 +4,32 @@
         "source": "com.example.calcetinder.app-main-54:/layout/dialog_calcetin.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-mergeDebugResources-51:\\layout\\dialog_crear_calcetin.xml",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\dialog_crear_calcetin.xml"
+        "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/fragment_miscalcetines.xml",
+        "source": "com.example.calcetinder.app-main-54:/layout/fragment_miscalcetines.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-mergeDebugResources-51:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-mergeDebugResources-51:\\layout\\fragment_swipe.xml",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_swipe.xml"
+        "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/fragment_registro.xml",
+        "source": "com.example.calcetinder.app-main-54:/layout/fragment_registro.xml"
     },
     {
         "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/item_calcetin.xml",
         "source": "com.example.calcetinder.app-main-54:/layout/item_calcetin.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-mergeDebugResources-51:\\layout\\fragment_registro.xml",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_registro.xml"
+        "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/dialog_crear_calcetin.xml",
+        "source": "com.example.calcetinder.app-main-54:/layout/dialog_crear_calcetin.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-mergeDebugResources-51:\\layout\\fragment_miscalcetines.xml",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_miscalcetines.xml"
+        "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/fragment_login.xml",
+        "source": "com.example.calcetinder.app-main-54:/layout/fragment_login.xml"
     },
     {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-mergeDebugResources-51:\\layout\\item_calcetin.xml",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\item_calcetin.xml"
+        "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "com.example.calcetinder.app-main-54:/layout/activity_main.xml"
     },
     {
         "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/fragment_swipe.xml",
         "source": "com.example.calcetinder.app-main-54:/layout/fragment_swipe.xml"
-    },
-    {
-        "merged": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-mergeDebugResources-51:\\layout\\fragment_login.xml",
-        "source": "C:\\Users\\148fa05\\.gradle\\daemon\\8.9\\com.example.calcetinder.app-main-54:\\layout\\fragment_login.xml"
     },
     {
         "merged": "com.example.calcetinder.app-mergeDebugResources-51:/layout/fragment_matches.xml",

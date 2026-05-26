@@ -4,7 +4,7 @@
             "outputFile": "com.example.calcetinder.app-mergeDebugResources-50:/values-pt/values-pt.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\148fa05\\.gradle\\caches\\8.9\\transforms\\42d873d530166e6f07f08412b09a1b30\\transformed\\appcompat-1.7.0\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\coperenea\\.gradle\\caches\\8.9\\transforms\\64294152bc6251050608533269f8ebec\\transformed\\appcompat-1.7.0\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\148fa05\\.gradle\\caches\\8.9\\transforms\\ace198541358ca32a7b90d6b71000845\\transformed\\navigation-ui-2.8.5\\res\\values-pt\\values-pt.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,119",
-                        "endOffsets": "162,282"
-                    },
-                    "to": {
-                        "startLines": "36,37",
-                        "startColumns": "4,4",
-                        "startOffsets": "3581,3693",
-                        "endColumns": "111,119",
-                        "endOffsets": "3688,3808"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\148fa05\\.gradle\\caches\\8.9\\transforms\\32f52c248225dcf3cb67bcdfe1a76721\\transformed\\core-1.15.0\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\coperenea\\.gradle\\caches\\8.9\\transforms\\aea31aab1d121f0ed577cb98d9ec02d7\\transformed\\core-1.15.0\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2843,2940,3042,3141,3241,3351,3461,3899",
                         "endColumns": "96,101,98,99,109,109,119,100",
                         "endOffsets": "2935,3037,3136,3236,3346,3456,3576,3995"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\coperenea\\.gradle\\caches\\8.9\\transforms\\dc16d37df105075d8469605f55db604a\\transformed\\navigation-ui-2.8.5\\res\\values-pt\\values-pt.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,119",
+                        "endOffsets": "162,282"
+                    },
+                    "to": {
+                        "startLines": "36,37",
+                        "startColumns": "4,4",
+                        "startOffsets": "3581,3693",
+                        "endColumns": "111,119",
+                        "endOffsets": "3688,3808"
                     }
                 }
             ]
