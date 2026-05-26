@@ -1,9 +1,10 @@
-package com.example.calcetinder.ui.login
+﻿package com.example.calcetinder.ui.login
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Patterns
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -15,41 +16,46 @@ import com.example.calcetinder.datos.Repositorio
 import com.example.calcetinder.databinding.FragmentLoginBinding
 import kotlinx.coroutines.launch
 
-class LoginFragment : Fragment(R.layout.fragment_login) {
+class LoginFragment : Fragment() {
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
     private lateinit var viewModel: LoginViewModel
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val b = FragmentLoginBinding.bind(view)
+        super.onViewCreated(view, savedInstanceState)
         val db = CalcetinderDB.obtenerDB(requireContext())
         val repo = Repositorio(db.usuarioDAO(), db.calcetinDAO(), db.matchDAO())
         viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
-            override fun <T : androidx.lifecycle.ViewModel> create(m: Class<T>) = LoginViewModel(repo) as T
-        })[LoginViewModel::class.java]
+            override fun <T : androidx.lifecycle.ViewModel> create(m: Class<T>): T = LoginViewModel(repo) as T
+        }).get(LoginViewModel::class.java)
 
-        b.btnLogin.setOnClickListener {
-            val email = b.etEmail.text.toString().trim()
-            val pass = b.etContrasena.text.toString().trim()
-            if (validar(b, email, pass)) viewModel.login(email, pass)
+        binding.btnLogin.setOnClickListener {
+            val identificador = binding.etEmail.text.toString()
+            val contrasena = binding.etContrasena.text.toString()
+            if (identificador.isNotEmpty() && contrasena.isNotEmpty()) viewModel.login(identificador, contrasena)
+            else Toast.makeText(context, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
         }
-
-        b.btnRegistro.setOnClickListener { findNavController().navigate(R.id.action_loginFragment_to_registroFragment) }
-
+        binding.btnRegistro.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registroFragment)
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.usuarioActual.collect { u ->
-                u?.let {
-                    requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE).edit().putInt("usuarioId", it.id).apply()
+                if (u != null) {
+                    requireContext().getSharedPreferences("calcetinder", Context.MODE_PRIVATE)
+                        .edit().putInt("usuarioId", u.id).apply()
                     findNavController().navigate(R.id.action_loginFragment_to_swipeFragment)
                 }
             }
         }
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.error.collect { if (it.isNotEmpty()) Toast.makeText(context, it, Toast.LENGTH_SHORT).show() }
+            viewModel.mensajeError.collect { if (it.isNotEmpty()) Toast.makeText(context, it, Toast.LENGTH_SHORT).show() }
         }
     }
 
-    private fun validar(b: FragmentLoginBinding, email: String, pass: String): Boolean {
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) b.etEmail.error = "Email inválido"
-        if (pass.length < 4) b.etContrasena.error = "Mínimo 4 caracteres"
-        return b.etEmail.error == null && b.etContrasena.error == null
-    }
+    override fun onDestroyView() { super.onDestroyView(); _binding = null }
 }

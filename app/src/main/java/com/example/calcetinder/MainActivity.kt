@@ -1,11 +1,4 @@
-package com.example.calcetinder
-
-/**
- * Proyecto: Calcetinder
- * Asignatura: Diseño de Interfaces
- * Alumno: David Merchán Rivero
- * Curso: 3º DAM - Arriaga Egibide
- */
+﻿package com.example.calcetinder
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -22,9 +15,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
-        val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navController = navHost.navController
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+        setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, AppBarConfiguration(navController.graph))
     }
 
