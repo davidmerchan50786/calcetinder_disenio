@@ -1,4 +1,4 @@
-package com.example.calcetinder.datos
+﻿package com.example.calcetinder.datos
 
 import com.example.calcetinder.modelo.Calcetin
 import com.example.calcetinder.modelo.Match
@@ -10,15 +10,15 @@ class Repositorio(
     private val calcetinDAO: CalcetinDAO,
     private val matchDAO: MatchDAO
 ) {
-    suspend fun insertarUsuario(u: Usuario) = usuarioDAO.insertar(u)
-    fun loginUsuario(email: String, pass: String): Flow<Usuario?> = usuarioDAO.login(email, pass)
+    suspend fun insertarUsuario(usuario: Usuario): Long = usuarioDAO.insertar(usuario)
+    fun loginUsuario(identificador: String, contrasena: String): Flow<Usuario?> = usuarioDAO.login(identificador, contrasena)
     fun obtenerUsuario(id: Int): Flow<Usuario?> = usuarioDAO.obtener(id)
-    suspend fun insertarCalcetin(c: Calcetin) = calcetinDAO.insertar(c)
-    suspend fun actualizarCalcetin(c: Calcetin) = calcetinDAO.actualizar(c)
-    suspend fun eliminarCalcetin(c: Calcetin) = calcetinDAO.eliminar(c)
-    fun obtenerCalcetin(id: Int): Flow<Calcetin?> = calcetinDAO.obtener(id)
-    fun obtenerCalcetinesPorUsuario(uid: Int): Flow<List<Calcetin>> = calcetinDAO.obtenerPorUsuario(uid)
+    suspend fun insertarCalcetin(calcetin: Calcetin) = calcetinDAO.insertar(calcetin)
+    suspend fun actualizarCalcetin(calcetin: Calcetin) = calcetinDAO.actualizar(calcetin)
+    suspend fun eliminarCalcetin(calcetin: Calcetin) = calcetinDAO.eliminar(calcetin)
+    fun obtenerCalcetinesPorUsuario(usuarioId: Int): Flow<List<Calcetin>> = calcetinDAO.obtenerPorUsuario(usuarioId)
     fun obtenerTodosCalcetines(): Flow<List<Calcetin>> = calcetinDAO.obtenerTodos()
-    suspend fun insertarMatch(m: Match) = matchDAO.insertar(m)
-    fun obtenerMatches(uid: Int): Flow<List<Match>> = matchDAO.obtenerMatches(uid)
+    fun obtenerCalcetinesLikeados(usuarioId: Int): Flow<List<Calcetin>> = calcetinDAO.obtenerCalcetinesLikeados(usuarioId)
+    suspend fun insertarMatch(match: Match) = matchDAO.insertar(match)
+    fun obtenerMatches(usuarioId: Int): Flow<List<Match>> = matchDAO.obtenerMatches(usuarioId)
 }
